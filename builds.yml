@@ -1,0 +1,9 @@
+---
+providers:
+  - virtualbox-iso
+  - vmware-iso
+
+public:
+  xenserver:
+    '6.2':
+    - x86_64

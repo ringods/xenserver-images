@@ -6,3 +6,4 @@ packer_cache/
 
 # For built boxes
 *.box
+*.metadata.json
