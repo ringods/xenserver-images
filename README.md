@@ -1,8 +1,54 @@
-Packer builds of XenServer Vagrant boxes for local testing
+# Vagrant images of XenServer
 
-Direct download Links:
+[![Build Status](http://img.shields.io/travis/ringods/xenserver.svg)][travis]
 
-* 6.5: http://downloadns.citrix.com.edgesuite.net/10175/XenServer-6.5.0-xenserver.org-install-cd.iso
-* 7.0: http://downloadns.citrix.com.edgesuite.net/11653/XenServer-7.0.0-install-cd.iso
-* 7.1 SP1: http://downloadns.citrix.com.edgesuite.net/11988/XenServer-7.1.0-s1-install-cd.iso
-* 7.2: http://downloadns.citrix.com.edgesuite.net/12636/XenServer-7.2.0-install-cd.iso
+Bento is a project that encapsulates [Packer](https://www.packer.io/) templates for building [Vagrant](https://www.vagrantup.com/) base boxes. A subset of templates are built and published to the [bento org](https://app.vagrantup.com/bento) on Vagrant Cloud. The boxes also serve as default boxes for [kitchen-vagrant](https://github.com/test-kitchen/kitchen-vagrant/).
+
+### Using Public Boxes
+
+Adding a xenserver box to Vagrant
+
+```
+$ vagrant box add ringods/xenserver-6.2
+```
+
+Using a xenserver box in a Vagrantfile
+
+```
+Vagrant.configure("2") do |config|
+  config.vm.box = "ringods/xenserver-6.2"
+end
+```
+
+### Building Boxes
+
+#### Requirements
+
+- [Packer](https://www.packer.io/)
+- At least one of the following virtualization providers:
+  - [VirtualBox](https://www.virtualbox.org)
+  - [VMware Fusion](https://www.vmware.com/products/fusion.html)
+  - [VMware Workstation](https://www.vmware.com/products/workstation.html)
+
+#### Using `packer`
+
+To build a Xenserver 6.2 box for only the VirtualBox provider
+
+```
+$ cd xenserver
+$ packer build -only=virtualbox-iso xenserver-6.2-amd64.json
+```
+
+If the build is successful, ready to import box files will be in the `builds` directory at the root of the repository.
+
+## Bugs and Issues
+
+Please use GitHub issues to report bugs, features, or other problems.
+
+## License & Authors
+
+The setup of this project is inspired by the [Bento][bento] project from Chef. A big thanks to
+the Chef team for such an easy setup.
+
+[travis]: https://travis-ci.org/ringods/xenserver-images
+[bento]: https://github.com/chef/bento
