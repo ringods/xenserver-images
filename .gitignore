@@ -1,3 +1,6 @@
+# Ignore Gemfile.lock to prevent the `--deployment` flag in Travis CI.
+Gemfile.lock
+
 # Cache objects
 packer_cache/
 
