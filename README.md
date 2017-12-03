@@ -1,6 +1,6 @@
 # Vagrant images of XenServer
 
-[![Build Status](http://img.shields.io/travis/ringods/xenserver.svg)][travis]
+[![Build Status](https://img.shields.io/travis/ringods/xenserver-images.svg)][travis]
 
 Bento is a project that encapsulates [Packer](https://www.packer.io/) templates for building [Vagrant](https://www.vagrantup.com/) base boxes. A subset of templates are built and published to the [bento org](https://app.vagrantup.com/bento) on Vagrant Cloud. The boxes also serve as default boxes for [kitchen-vagrant](https://github.com/test-kitchen/kitchen-vagrant/).
 
@@ -52,3 +52,13 @@ the Chef team for such an easy setup.
 
 [travis]: https://travis-ci.org/ringods/xenserver-images
 [bento]: https://github.com/chef/bento
+
+
+
+
+Direct download Links:
+
+* 6.5: http://downloadns.citrix.com.edgesuite.net/10175/XenServer-6.5.0-xenserver.org-install-cd.iso
+* 7.0: http://downloadns.citrix.com.edgesuite.net/11653/XenServer-7.0.0-install-cd.iso
+* 7.1 SP1: http://downloadns.citrix.com.edgesuite.net/11988/XenServer-7.1.0-s1-install-cd.iso
+* 7.2: http://downloadns.citrix.com.edgesuite.net/12636/XenServer-7.2.0-install-cd.iso
