@@ -66,16 +66,17 @@
     ],
     "post-processors": [
         {
+            "type": "vagrant",
             "compression_level": 9,
             "output": "../builds/{{user `name`}}.{{.Provider}}.box",
-            "type": "vagrant"
+            "vagrantfile_template": "Vagrantfile.template"
         }
     ],
     "provisioners": [
         {
             "type": "shell",
             "scripts": [
-                "scripts/vagrant.sh",
+                "scripts/vagrant-set-ssh-key.sh",
                 "scripts/minimize.sh"
             ]
         }

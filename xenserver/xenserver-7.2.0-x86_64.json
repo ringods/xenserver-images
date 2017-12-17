@@ -66,16 +66,19 @@
     ],
     "post-processors": [
         {
+            "type": "vagrant",
             "compression_level": 9,
             "output": "../builds/{{user `name`}}.{{.Provider}}.box",
-            "type": "vagrant"
+            "vagrantfile_template": "Vagrantfile.template"
         }
     ],
     "provisioners": [
         {
             "type": "shell",
             "scripts": [
-                "scripts/vagrant.sh",
+                "scripts/vagrant-set-ssh-key.sh",
+                "scripts/systemd-reset-machine-id.sh",
+                "scripts/systemd-firstboot-reset-networking.sh",
                 "scripts/minimize.sh"
             ]
         }
